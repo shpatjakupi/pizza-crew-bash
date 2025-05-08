@@ -21,7 +21,7 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 py-20 lg:py-32">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 order-2 lg:order-1">
             <h1 className="logo-text text-4xl md:text-6xl lg:text-7xl text-pizza-orange mb-6">
               {t('heroTitle')}
             </h1>
@@ -45,7 +45,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="lg:w-1/2 relative">
+          <div className="lg:w-1/2 relative order-1 lg:order-2">
             <div className="relative w-full h-[400px] overflow-hidden rounded-xl shadow-2xl float-animation">
               <img 
                 src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1000&auto=format&fit=crop"

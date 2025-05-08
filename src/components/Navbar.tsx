@@ -26,10 +26,7 @@ const Navbar = () => {
           </span>
         </a>
         
-        {/* Language toggle - visible on all screen sizes */}
-        <div className="absolute left-1/2 -translate-x-1/2 hidden md:block">
-          <LanguageToggle />
-        </div>
+        {/* Language toggle - moved to the right side for all screen sizes */}
         
         {/* Mobile menu button */}
         <div className="lg:hidden flex items-center gap-4">
@@ -70,6 +67,7 @@ const Navbar = () => {
           >
             {t('contact')}
           </a>
+          <LanguageToggle />
           <Button 
             className="gradient-orange text-white font-semibold hover:shadow-lg" 
             onClick={() => scrollToSection('contact')}

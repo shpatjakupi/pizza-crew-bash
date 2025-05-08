@@ -16,7 +16,7 @@ const LanguageToggle = () => {
       variant="outline" 
       size="sm" 
       onClick={toggleLanguage}
-      className="flex items-center gap-2 bg-white/80 backdrop-blur-sm hover:bg-white"
+      className="flex items-center gap-2 bg-white/80 backdrop-blur-sm hover:bg-white border-pizza-orange text-pizza-orange hover:text-white hover:bg-pizza-orange"
     >
       <Globe size={16} />
       {language === 'en' ? t('danish') : t('english')}

@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { Pizza } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const AboutSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-white to-orange-50">
       <div className="container mx-auto px-4">
@@ -44,42 +47,42 @@ const AboutSection = () => {
           
           <div className="lg:w-1/2">
             <h2 className="logo-text text-3xl md:text-4xl text-pizza-orange mb-6">
-              The Pizza Crew Story
+              {t('thePizzaCrewStory')}
             </h2>
             <p className="text-lg mb-6 text-gray-700">
-              We're not just another catering service – we're a crew of passionate pizza makers who believe that great food creates unforgettable moments.
+              {t('aboutParagraph1')}
             </p>
             <p className="text-lg mb-6 text-gray-700">
-              Pizza Crew was born from the idea that everyone deserves authentic, freshly-made pizza at their events. We bring our mobile pizza ovens to your location and prepare everything on-site.
+              {t('aboutParagraph2')}
             </p>
             <p className="text-lg mb-6 text-gray-700">
-              From the dough we prepare daily to the premium ingredients we carefully select, everything is crafted with love and attention to detail. It's street food with Italian soul – casual, fun, and incredibly delicious!
+              {t('aboutParagraph3')}
             </p>
             
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <h3 className="font-bold text-xl mb-2">
-                  <span className="text-pizza-orange">100%</span> Fresh
+                  <span className="text-pizza-orange">100%</span> {t('freshLabel')}
                 </h3>
-                <p className="text-gray-600">Made on-site with fresh ingredients</p>
+                <p className="text-gray-600">{t('freshDesc')}</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <h3 className="font-bold text-xl mb-2">
-                  <span className="text-pizza-orange">50+</span> Events
+                  <span className="text-pizza-orange">50+</span> {t('eventsLabel')}
                 </h3>
-                <p className="text-gray-600">Successfully catered each year</p>
+                <p className="text-gray-600">{t('eventsDesc')}</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <h3 className="font-bold text-xl mb-2">
-                  <span className="text-pizza-orange">15+</span> Pizza Types
+                  <span className="text-pizza-orange">15+</span> {t('pizzaTypesLabel')}
                 </h3>
-                <p className="text-gray-600">From classic to gourmet options</p>
+                <p className="text-gray-600">{t('pizzaTypesDesc')}</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <h3 className="font-bold text-xl mb-2">
-                  <span className="text-pizza-orange">100%</span> Fun
+                  <span className="text-pizza-orange">100%</span> {t('funLabel')}
                 </h3>
-                <p className="text-gray-600">We bring the party with us!</p>
+                <p className="text-gray-600">{t('funDesc')}</p>
               </div>
             </div>
           </div>
