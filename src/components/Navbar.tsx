@@ -2,9 +2,12 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     setIsMenuOpen(false);
@@ -23,8 +26,14 @@ const Navbar = () => {
           </span>
         </a>
         
+        {/* Language toggle - visible on all screen sizes */}
+        <div className="absolute left-1/2 -translate-x-1/2 hidden md:block">
+          <LanguageToggle />
+        </div>
+        
         {/* Mobile menu button */}
-        <div className="lg:hidden">
+        <div className="lg:hidden flex items-center gap-4">
+          <LanguageToggle />
           <Button 
             variant="ghost" 
             size="icon" 
@@ -41,31 +50,31 @@ const Navbar = () => {
             onClick={() => scrollToSection('services')} 
             className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer"
           >
-            Our Events
+            {t('ourEvents')}
           </a>
           <a 
             onClick={() => scrollToSection('about')} 
             className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer"
           >
-            About Us
+            {t('aboutUs')}
           </a>
           <a 
             onClick={() => scrollToSection('menu')} 
             className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer"
           >
-            Menu
+            {t('menu')}
           </a>
           <a 
             onClick={() => scrollToSection('contact')} 
             className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer"
           >
-            Contact
+            {t('contact')}
           </a>
           <Button 
             className="gradient-orange text-white font-semibold hover:shadow-lg" 
             onClick={() => scrollToSection('contact')}
           >
-            Book Now
+            {t('bookNow')}
           </Button>
         </div>
       </div>
@@ -78,31 +87,31 @@ const Navbar = () => {
               onClick={() => scrollToSection('services')}
               className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium cursor-pointer"
             >
-              Our Events
+              {t('ourEvents')}
             </a>
             <a 
               onClick={() => scrollToSection('about')}
               className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium cursor-pointer"
             >
-              About Us
+              {t('aboutUs')}
             </a>
             <a 
               onClick={() => scrollToSection('menu')}
               className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium cursor-pointer"
             >
-              Menu
+              {t('menu')}
             </a>
             <a 
               onClick={() => scrollToSection('contact')}
               className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium cursor-pointer"
             >
-              Contact
+              {t('contact')}
             </a>
             <Button 
               className="gradient-orange text-white font-semibold w-full"
               onClick={() => scrollToSection('contact')}
             >
-              Book Now
+              {t('bookNow')}
             </Button>
           </div>
         </div>

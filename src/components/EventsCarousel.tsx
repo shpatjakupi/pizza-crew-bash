@@ -9,56 +9,58 @@ import {
   CalendarCheck, 
   Utensils 
 } from "lucide-react";
-
-const events = [
-  {
-    id: 1,
-    title: "Birthdays",
-    description: "Make your birthday special with fresh pizza made on the spot",
-    icon: Cake,
-    color: "bg-pink-500"
-  },
-  {
-    id: 2,
-    title: "Confirmations",
-    description: "Celebrate your confirmation with delicious pizzas for all guests",
-    icon: CalendarCheck,
-    color: "bg-blue-500"
-  },
-  {
-    id: 3,
-    title: "Student Celebrations",
-    description: "Perfect for graduation parties and student gatherings",
-    icon: PartyPopper,
-    color: "bg-green-500"
-  },
-  {
-    id: 4,
-    title: "Blue Monday",
-    description: "Turn Blue Monday into a delicious day with pizza for your team",
-    icon: Calendar,
-    color: "bg-indigo-500"
-  },
-  {
-    id: 5,
-    title: "Networking Events",
-    description: "Impress clients and partners with gourmet pizza catering",
-    icon: Users,
-    color: "bg-orange-500"
-  },
-  {
-    id: 6,
-    title: "Private Gatherings",
-    description: "From family reunions to backyard parties - we've got you covered",
-    icon: Utensils,
-    color: "bg-red-500"
-  }
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 const EventsCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const { t } = useLanguage();
+
+  const events = [
+    {
+      id: 1,
+      title: () => t('birthdays'),
+      description: () => t('birthdaysDesc'),
+      icon: Cake,
+      color: "bg-pink-500"
+    },
+    {
+      id: 2,
+      title: () => t('confirmations'),
+      description: () => t('confirmationsDesc'),
+      icon: CalendarCheck,
+      color: "bg-blue-500"
+    },
+    {
+      id: 3,
+      title: () => t('studentCelebrations'),
+      description: () => t('studentCelebrationsDesc'),
+      icon: PartyPopper,
+      color: "bg-green-500"
+    },
+    {
+      id: 4,
+      title: () => t('blueMonday'),
+      description: () => t('blueMondayDesc'),
+      icon: Calendar,
+      color: "bg-indigo-500"
+    },
+    {
+      id: 5,
+      title: () => t('networkingEvents'),
+      description: () => t('networkingEventsDesc'),
+      icon: Users,
+      color: "bg-orange-500"
+    },
+    {
+      id: 6,
+      title: () => t('privateGatherings'),
+      description: () => t('privateGatheringsDesc'),
+      icon: Utensils,
+      color: "bg-red-500"
+    }
+  ];
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
@@ -117,11 +119,10 @@ const EventsCarousel = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="logo-text text-3xl md:text-4xl text-pizza-orange mb-4">
-            We Cater All Events
+            {t('weCaterAllEvents')}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            From birthday celebrations to corporate gatherings, we bring the pizza party to you. 
-            Our mobile pizza catering service is perfect for any occasion.
+            {t('eventsSectionSubtitle')}
           </p>
         </div>
         
@@ -144,8 +145,8 @@ const EventsCarousel = () => {
                   <div className={`${event.color} w-16 h-16 rounded-full flex items-center justify-center text-white mb-4`}>
                     <event.icon size={32} />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-                  <p className="text-gray-600">{event.description}</p>
+                  <h3 className="text-xl font-bold mb-2">{event.title()}</h3>
+                  <p className="text-gray-600">{event.description()}</p>
                 </CardContent>
               </Card>
             ))}

@@ -2,8 +2,18 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { PartyPopper } from "lucide-react";
+import { useLanguage } from '@/context/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative overflow-hidden">
       {/* Background pattern */}
@@ -13,17 +23,24 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="lg:w-1/2">
             <h1 className="logo-text text-4xl md:text-6xl lg:text-7xl text-pizza-orange mb-6">
-              Mobile Pizza Catering For Any Celebration
+              {t('heroTitle')}
             </h1>
             <p className="text-lg md:text-xl mb-8 text-gray-700 max-w-lg">
-              We bring the ultimate pizza party to your event! Fresh, delicious pizzas made on-site with premium ingredients. Street food vibes meets Italian soul.
+              {t('heroSubtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="gradient-orange text-white font-semibold text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all pulse-grow">
-                <PartyPopper className="mr-2" /> Book Pizza Crew
+              <Button 
+                className="gradient-orange text-white font-semibold text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all pulse-grow"
+                onClick={() => scrollToSection('contact')}
+              >
+                <PartyPopper className="mr-2" /> {t('bookPizzaCrew')}
               </Button>
-              <Button variant="outline" className="text-pizza-orange border-pizza-orange hover:bg-pizza-orange/10 font-medium text-lg py-6 px-8">
-                See Our Menu
+              <Button 
+                variant="outline" 
+                className="text-pizza-orange border-pizza-orange hover:bg-pizza-orange/10 font-medium text-lg py-6 px-8"
+                onClick={() => scrollToSection('menu')}
+              >
+                {t('seeOurMenu')}
               </Button>
             </div>
           </div>
@@ -37,7 +54,7 @@ const Hero = () => {
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
                 <span className="inline-block bg-yellow-300 text-yellow-800 font-bold px-4 py-1 rounded-full text-sm">
-                  Fresh & Hot Anywhere You Are!
+                  {t('freshHot')}
                 </span>
               </div>
             </div>
