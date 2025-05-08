@@ -46,6 +46,10 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+  }
+  html {
+    scroll-behavior: smooth;
   }
 }
 
@@ -94,3 +98,4 @@
 .pulse-grow {
   animation: pulse-grow 2s ease-in-out infinite;
 }
+

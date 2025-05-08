@@ -6,6 +6,14 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    setIsMenuOpen(false);
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="w-full py-4 px-4 lg:px-8 sticky top-0 z-50 bg-white/90 backdrop-blur-sm">
       <div className="container mx-auto flex justify-between items-center">
@@ -29,19 +37,34 @@ const Navbar = () => {
         
         {/* Desktop navigation */}
         <div className="hidden lg:flex items-center space-x-8">
-          <a href="#services" className="text-foreground hover:text-pizza-orange font-medium transition-colors">
+          <a 
+            onClick={() => scrollToSection('services')} 
+            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer"
+          >
             Our Events
           </a>
-          <a href="#about" className="text-foreground hover:text-pizza-orange font-medium transition-colors">
+          <a 
+            onClick={() => scrollToSection('about')} 
+            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer"
+          >
             About Us
           </a>
-          <a href="#menu" className="text-foreground hover:text-pizza-orange font-medium transition-colors">
+          <a 
+            onClick={() => scrollToSection('menu')} 
+            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer"
+          >
             Menu
           </a>
-          <a href="#contact" className="text-foreground hover:text-pizza-orange font-medium transition-colors">
+          <a 
+            onClick={() => scrollToSection('contact')} 
+            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer"
+          >
             Contact
           </a>
-          <Button className="gradient-orange text-white font-semibold hover:shadow-lg">
+          <Button 
+            className="gradient-orange text-white font-semibold hover:shadow-lg" 
+            onClick={() => scrollToSection('contact')}
+          >
             Book Now
           </Button>
         </div>
@@ -52,36 +75,32 @@ const Navbar = () => {
         <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-md animate-slide-in p-4">
           <div className="flex flex-col space-y-4">
             <a 
-              href="#services" 
-              className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => scrollToSection('services')}
+              className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium cursor-pointer"
             >
               Our Events
             </a>
             <a 
-              href="#about" 
-              className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => scrollToSection('about')}
+              className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium cursor-pointer"
             >
               About Us
             </a>
             <a 
-              href="#menu" 
-              className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => scrollToSection('menu')}
+              className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium cursor-pointer"
             >
               Menu
             </a>
             <a 
-              href="#contact" 
-              className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => scrollToSection('contact')}
+              className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium cursor-pointer"
             >
               Contact
             </a>
             <Button 
               className="gradient-orange text-white font-semibold w-full"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => scrollToSection('contact')}
             >
               Book Now
             </Button>
