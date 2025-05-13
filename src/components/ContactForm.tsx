@@ -10,7 +10,7 @@ import { useLanguage } from '@/context/LanguageContext';
 const ContactForm = () => {
   const { toast } = useToast();
   const { t } = useLanguage();
-  
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,30 +25,53 @@ const ContactForm = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted with data:', formData);
+// In the handleSubmit function
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  
+  try {
+    const response = await fetch('/api/email/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
     
-    // Show success toast
+    const data = await response.json();
+    
+    if (data.success) {
+      toast({
+        title: "Booking request sent!",
+        description: "We'll contact you soon to confirm your event details.",
+        variant: "default",
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        eventDate: '',
+        eventType: '',
+        guestCount: '',
+        message: ''
+      });
+    } else {
+      throw new Error(data.message || 'Failed to send email');
+    }
+  } catch (error) {
     toast({
-      title: "Booking request sent!",
-      description: "We'll contact you soon to confirm your event details.",
-      variant: "default",
+      title: "Error sending request",
+      description: "Please try again or contact us directly.",
+      variant: "destructive",
     });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      eventDate: '',
-      eventType: '',
-      guestCount: '',
-      message: ''
-    });
-  };
-
+    console.error(error);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -181,12 +204,13 @@ const ContactForm = () => {
                 />
               </div>
               
-              <Button
-                type="submit"
-                className="w-full gradient-orange text-white font-semibold py-6"
-              >
-                {t('bookPizzaCrewNow')}
-              </Button>
+            <Button
+              type="submit"
+              className="w-full gradient-orange text-white font-semibold py-6"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (t('sending') || 'Sending...') : t('bookPizzaCrewNow')}
+            </Button>
             </form>
           </div>
           
