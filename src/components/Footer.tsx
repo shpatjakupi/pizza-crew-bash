@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { Pizza, Mail, Phone, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
+import { useLanguage } from '@/context/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
+  
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -14,7 +17,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-gray-300 mb-6 max-w-xs">
-              Mobile pizza catering for all your events. We bring the ultimate pizza experience directly to your location.
+              {t('footerDesc')}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="bg-gray-700 hover:bg-pizza-orange transition-colors p-2 rounded-full">
@@ -30,28 +33,28 @@ const Footer = () => {
           </div>
           
           <div className="w-full md:w-1/4 mb-10">
-            <h3 className="text-xl font-bold mb-6">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-6">{t('quickLinks')}</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-300 hover:text-pizza-orange transition-colors">Home</a>
+                <a href="#" className="text-gray-300 hover:text-pizza-orange transition-colors">{t('home')}</a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-pizza-orange transition-colors">Our Events</a>
+                <a href="#services" className="text-gray-300 hover:text-pizza-orange transition-colors">{t('ourEvents')}</a>
               </li>
               <li>
-                <a href="#about" className="text-gray-300 hover:text-pizza-orange transition-colors">About Us</a>
+                <a href="#about" className="text-gray-300 hover:text-pizza-orange transition-colors">{t('aboutUs')}</a>
               </li>
               <li>
-                <a href="#menu" className="text-gray-300 hover:text-pizza-orange transition-colors">Menu</a>
+                <a href="#menu" className="text-gray-300 hover:text-pizza-orange transition-colors">{t('menu')}</a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-pizza-orange transition-colors">Contact</a>
+                <a href="#contact" className="text-gray-300 hover:text-pizza-orange transition-colors">{t('contact')}</a>
               </li>
             </ul>
           </div>
           
           <div className="w-full md:w-1/3 mb-10">
-            <h3 className="text-xl font-bold mb-6">Contact Us</h3>
+            <h3 className="text-xl font-bold mb-6">{t('contactUs')}</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <Phone className="text-pizza-orange mr-3 flex-shrink-0 mt-1" size={18} />
@@ -64,8 +67,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin className="text-pizza-orange mr-3 flex-shrink-0 mt-1" size={18} />
                 <span className="text-gray-300">
-                  Mobile throughout the greater metro area. 
-                  Contact us to check availability in your location!
+                  {t('locationDesc')}
                 </span>
               </li>
             </ul>
@@ -73,10 +75,10 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-10 pt-8 text-center text-gray-400 text-sm">
-          <p>© {new Date().getFullYear()} Pizza Crew. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Pizza Crew. {t('allRightsReserved')}</p>
           <div className="mt-2 flex justify-center space-x-6">
-            <a href="#" className="hover:text-pizza-orange">Privacy Policy</a>
-            <a href="#" className="hover:text-pizza-orange">Terms of Service</a>
+            <a href="#" className="hover:text-pizza-orange">{t('privacyPolicy')}</a>
+            <a href="#" className="hover:text-pizza-orange">{t('termsOfService')}</a>
           </div>
         </div>
       </div>

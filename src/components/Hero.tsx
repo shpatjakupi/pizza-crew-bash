@@ -5,7 +5,7 @@ import { PartyPopper } from "lucide-react";
 import { useLanguage } from '@/context/LanguageContext';
 
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -23,7 +23,13 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="lg:w-1/2 order-2 lg:order-1 z-10">
             <h1 className="logo-text text-4xl md:text-6xl lg:text-7xl text-pizza-orange mb-6">
-              {t('heroTitle')}
+              {language === 'da' ? (
+                <>
+                  Mobil Pizza<br />catering Til Enhver Fejring
+                </>
+              ) : (
+                t('heroTitle')
+              )}
             </h1>
             <p className="text-lg md:text-xl mb-8 text-gray-700 max-w-lg">
               {t('heroSubtitle')}

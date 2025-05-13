@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 
 // Define available languages
@@ -30,7 +29,7 @@ const translations: Translations = {
   "bookNow": { en: "Book Now", da: "Book Nu" },
   
   // Hero
-  "heroTitle": { en: "Mobile Pizza Catering For Any Celebration", da: "Mobil Pizzacatering Til Enhver Fejring" },
+  "heroTitle": { en: "Mobile Pizza Catering For Any Celebration", da: "Mobil Pizza\ncatering Til Enhver Fejring" },
   "heroSubtitle": { 
     en: "We bring the ultimate pizza party to your event! Fresh, delicious pizzas made on-site with premium ingredients. Street food vibes meets Italian soul.", 
     da: "Vi bringer den ultimative pizzafest til dit arrangement! Friske, lækre pizzaer lavet på stedet med førsteklasses ingredienser. Street food stemning møder italiensk sjæl." 
