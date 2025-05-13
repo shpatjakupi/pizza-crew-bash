@@ -1,5 +1,5 @@
 
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 
 // Define available languages
 export type Language = 'en' | 'da';
@@ -185,6 +185,21 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
     }
     return translations[key][language];
   };
+
+  // Apply language change to the document for accessibility
+  useEffect(() => {
+    document.documentElement.lang = language;
+    // Save language preference to localStorage
+    localStorage.setItem('preferredLanguage', language);
+  }, [language]);
+
+  // Load language preference from localStorage on initial render
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('preferredLanguage') as Language | null;
+    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'da')) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t, translations }}>

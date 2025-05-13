@@ -115,7 +115,7 @@ const EventsCarousel = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="pt-28 pb-20 -mt-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="logo-text text-3xl md:text-4xl text-pizza-orange mb-4">

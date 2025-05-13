@@ -13,7 +13,7 @@ const Navbar = () => {
     setIsMenuOpen(false);
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -26,9 +26,7 @@ const Navbar = () => {
           </span>
         </a>
         
-        {/* Language toggle - moved to the right side for all screen sizes */}
-        
-        {/* Mobile menu button */}
+        {/* Mobile menu button and language toggle */}
         <div className="lg:hidden flex items-center gap-4">
           <LanguageToggle />
           <Button 
@@ -42,38 +40,40 @@ const Navbar = () => {
         </div>
         
         {/* Desktop navigation */}
-        <div className="hidden lg:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-6">
           <a 
             onClick={() => scrollToSection('services')} 
-            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer"
+            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer whitespace-nowrap"
           >
             {t('ourEvents')}
           </a>
           <a 
             onClick={() => scrollToSection('about')} 
-            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer"
+            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer whitespace-nowrap"
           >
             {t('aboutUs')}
           </a>
           <a 
             onClick={() => scrollToSection('menu')} 
-            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer"
+            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer whitespace-nowrap"
           >
             {t('menu')}
           </a>
           <a 
             onClick={() => scrollToSection('contact')} 
-            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer"
+            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer whitespace-nowrap"
           >
             {t('contact')}
           </a>
-          <LanguageToggle />
-          <Button 
-            className="gradient-orange text-white font-semibold hover:shadow-lg" 
-            onClick={() => scrollToSection('contact')}
-          >
-            {t('bookNow')}
-          </Button>
+          <div className="flex items-center gap-3">
+            <LanguageToggle />
+            <Button 
+              className="gradient-orange text-white font-semibold hover:shadow-lg whitespace-nowrap" 
+              onClick={() => scrollToSection('contact')}
+            >
+              {t('bookNow')}
+            </Button>
+          </div>
         </div>
       </div>
       

@@ -10,7 +10,7 @@ const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -21,7 +21,7 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 py-20 lg:py-32">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          <div className="lg:w-1/2 order-2 lg:order-1">
+          <div className="lg:w-1/2 order-2 lg:order-1 z-10">
             <h1 className="logo-text text-4xl md:text-6xl lg:text-7xl text-pizza-orange mb-6">
               {t('heroTitle')}
             </h1>
