@@ -7,7 +7,9 @@ import {
   Cake,
   Calendar,
   CalendarCheck,
-  Utensils
+  Utensils,
+  ArrowLeft,
+  ArrowRight
 } from "lucide-react";
 import { useLanguage } from '@/context/LanguageContext';
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -18,10 +20,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 
 const EventsCarousel = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
+  const [api, setApi] = React.useState<any>(null);
 
   const events = [
     {
@@ -68,6 +72,14 @@ const EventsCarousel = () => {
     }
   ];
 
+  const scrollPrev = React.useCallback(() => {
+    api?.scrollPrev();
+  }, [api]);
+
+  const scrollNext = React.useCallback(() => {
+    api?.scrollNext();
+  }, [api]);
+
   return (
     <section id="services" className="pt-28 pb-20 -mt-20 bg-white">
       <div className="container mx-auto px-4">
@@ -88,6 +100,7 @@ const EventsCarousel = () => {
               slidesToScroll: isMobile ? 1 : 3,
             }}
             className="w-full"
+            setApi={setApi}
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {events.map((event) => (
@@ -112,22 +125,26 @@ const EventsCarousel = () => {
 
           {isMobile && (
             <div className="flex justify-center gap-2 mt-6">
-              <button 
+              <Button
                 className="bg-white/80 hover:bg-white p-2 rounded-full shadow-lg"
                 aria-label="Previous event"
+                onClick={scrollPrev}
+                variant="outline"
+                size="icon"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="m15 18-6-6 6-6"/>
-                </svg>
-              </button>
-              <button 
+                <ArrowLeft className="h-4 w-4" />
+                <span className="sr-only">Previous slide</span>
+              </Button>
+              <Button
                 className="bg-white/80 hover:bg-white p-2 rounded-full shadow-lg"
                 aria-label="Next event"
+                onClick={scrollNext}
+                variant="outline"
+                size="icon"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="m9 18 6-6-6-6"/>
-                </svg>
-              </button>
+                <ArrowRight className="h-4 w-4" />
+                <span className="sr-only">Next slide</span>
+              </Button>
             </div>
           )}
         </div>
