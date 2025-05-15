@@ -5,7 +5,7 @@ import Hero from '@/components/Hero';
 import EventsCarousel from '@/components/EventsCarousel';
 import AboutSection from '@/components/AboutSection';
 import MenuSection from '@/components/MenuSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
+//import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 
@@ -16,8 +16,7 @@ const Index = () => {
       <Hero />
       <EventsCarousel />
       <AboutSection />
-      <MenuSection />
-      <TestimonialsSection />
+      <MenuSection /> 
       <ContactForm />
       <Footer />
     </div>

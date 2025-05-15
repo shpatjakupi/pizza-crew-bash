@@ -36,33 +36,58 @@ const translations: Translations = {
   },
   "bookPizzaCrew": { en: "Book Pizza Crew", da: "Book Pizza Crew" },
   "seeOurMenu": { en: "See Our Menu", da: "Se Vores Menu" },
-  "freshHot": { en: "Fresh & Hot Anywhere You Are!", da: "Frisk & Varm Overalt Hvor Du Er!" },
+  "freshHot": { en: "Lavet med kærlighed! ❤️", da: "Made with love! ❤️" },
   
-  // Events section
+// Events section
   "weCaterAllEvents": { en: "We Cater All Events", da: "Vi Caterer Alle Arrangementer" },
-  "eventsSectionSubtitle": { 
-    en: "From birthday celebrations to corporate gatherings, we bring the pizza party to you. Our mobile pizza catering service is perfect for any occasion.", 
-    da: "Fra fødselsdagsfester til firmasammenkomster bringer vi pizzafesten til dig. Vores mobile pizzacatering er perfekt til enhver lejlighed." 
+  "eventsSectionSubtitle": {
+    en: "From birthday celebrations to corporate gatherings, we bring the pizza party to you. Our mobile pizza catering service is perfect for any occasion, creating unforgettable experiences with authentic wood-fired pizzas.",
+    da: "Fra fødselsdagsfester til firmasammenkomster bringer vi pizzafesten til dig. Vores mobile pizzacatering er perfekt til enhver lejlighed og skaber uforglemmelige oplevelser med autentiske træfyrede pizzaer."
   },
   "birthdays": { en: "Birthdays", da: "Fødselsdage" },
-  "birthdaysDesc": { en: "Make your birthday special with fresh pizza made on the spot", da: "Gør din fødselsdag speciel med frisk pizza lavet på stedet" },
-  "confirmations": { en: "Confirmations", da: "Konfirmationer" },
-  "confirmationsDesc": { en: "Celebrate your confirmation with delicious pizzas for all guests", da: "Fejr din konfirmation med lækre pizzaer til alle gæster" },
-  "studentCelebrations": { en: "Student Celebrations", da: "Studenterfejringer" },
-  "studentCelebrationsDesc": { en: "Perfect for graduation parties and student gatherings", da: "Perfekt til dimissionsfester og studenterfejringer" },
-  "blueMonday": { en: "Blue Monday", da: "Blue Monday" },
-  "blueMondayDesc": { en: "Turn Blue Monday into a delicious day with pizza for your team", da: "Gør Blue Monday til en lækker dag med pizza til dit team" },
-  "networkingEvents": { en: "Networking Events", da: "Netværksarrangementer" },
-  "networkingEventsDesc": { en: "Impress clients and partners with gourmet pizza catering", da: "Imponér kunder og partnere med gourmet pizzacatering" },
-  "privateGatherings": { en: "Private Gatherings", da: "Private Sammenkomster" },
-  "privateGatheringsDesc": { en: "From family reunions to backyard parties - we've got you covered", da: "Fra familiefester til havefester - vi har dig dækket" },
-  
-  // About section
-  "thePizzaCrewStory": { en: "The Pizza Crew Story", da: "Pizza Crew Historien" },
-  "aboutParagraph1": { 
-    en: "We're not just another catering service – we're a crew of passionate pizza makers who believe that great food creates unforgettable moments.", 
-    da: "Vi er ikke bare endnu en cateringservice – vi er et hold passionerede pizzabagere, der tror på, at god mad skaber uforglemmelige øjeblikke." 
+  "birthdaysDesc": { 
+    en: "Make your birthday celebration extraordinary with our artisanal pizzas made fresh right at your venue. Perfect for both kids and adults!", 
+    da: "Gør din fødselsdagsfejring ekstraordinær med vores håndlavede pizzaer, der tilberedes friske direkte på dit feststed. Perfekt til både børn og voksne!" 
   },
+  "confirmations": { en: "Confirmations", da: "Konfirmationer" },
+  "confirmationsDesc": { 
+    en: "Create a memorable confirmation celebration with our gourmet pizza experience. We'll impress your guests with delicious options for everyone.", 
+    da: "Skab en mindeværdig konfirmationsfejring med vores gourmet pizza-oplevelse. Vi vil imponere dine gæster med lækre muligheder til alle." 
+  },
+  "studentCelebrations": { en: "Student Celebrations", da: "Studenterfejringer" },
+  "studentCelebrationsDesc": { 
+    en: "Celebrate academic achievements with a festive pizza party! Our catering is the perfect solution for graduation events and student gatherings.", 
+    da: "Fejr akademiske præstationer med en festlig pizzafest! Vores catering er den perfekte løsning til dimissionsfester og studenterfejringer." 
+  },
+  "networkingEvents": { en: "Networking Events", da: "Netværksarrangementer" },
+  "networkingEventsDesc": { 
+    en: "Break the ice at your next professional gathering with our premium pizza catering. Impress clients and build connections over delicious food.", 
+    da: "Bryd isen ved dit næste professionelle arrangement med vores premium pizzacatering. Imponér kunder og skab forbindelser over lækker mad." 
+  },
+  "privateGatherings": { en: "Private Gatherings", da: "Private Sammenkomster" },
+  "privateGatheringsDesc": { 
+    en: "From intimate family reunions to vibrant backyard parties - our mobile pizza oven transforms any gathering into a special culinary event.", 
+    da: "Fra intime familiefester til livlige havefester - vores mobile pizzaovn forvandler enhver sammenkomst til en særlig kulinarisk begivenhed." 
+  },
+  "corporateEvents": { en: "Corporate Events", da: "Firmaevents" },
+  "corporateEventsDesc": { 
+    en: "Boost team morale and employee satisfaction with our unique pizza catering for meetings, team-building days, and company celebrations.", 
+    da: "Boost teammoral og medarbejdertilfredshed med vores unikke pizzacatering til møder, teambuilding-dage og firmafester." 
+  },
+  "allParties": { en: "For All Celebrations", da: "Til Alle Festligheder" },
+  "allPartiesDesc": { 
+    en: "Whatever your occasion, our mobile pizza catering adds that special touch. Customizable menus and flexible service for any event you can imagine!", 
+    da: "Uanset din anledning tilføjer vores mobile pizzacatering det særlige touch. Tilpassede menuer og fleksibel service til enhver begivenhed, du kan forestille dig!" 
+  },
+  // About section
+"thePizzaCrewStory": { 
+  "en": "The Pizza Crew Story", 
+  "da": "Pizza Crew Historien" 
+},
+"aboutParagraph1": { 
+  "en": "With over 20 years of combined experience baking stone oven pizzas – from the Italiano Pompei restaurant at Kultorvet to the unique Forno a Legna pizzeria in Ordrup – we now bring the craft to your backyard!", 
+  "da": "Med over 20 års samlet erfaring i at bage stenovnspizzaer – fra restauranten Italiano Pompei på Kultorvet til det unikke pizzeria Forno a Legna i Ordrup – bringer vi nu håndværket direkte til din baghave!" 
+},
   "aboutParagraph2": { 
     en: "Pizza Crew was born from the idea that everyone deserves authentic, freshly-made pizza at their events. We bring our mobile pizza ovens to your location and prepare everything on-site.", 
     da: "Pizza Crew blev født af idéen om, at alle fortjener autentisk, frisklavet pizza til deres arrangementer. Vi bringer vores mobile pizzaovne til din lokation og forbereder alt på stedet." 
@@ -73,8 +98,14 @@ const translations: Translations = {
   },
   "freshLabel": { en: "Fresh", da: "Frisk" },
   "freshDesc": { en: "Made on-site with fresh ingredients", da: "Lavet på stedet med friske ingredienser" },
-  "eventsLabel": { en: "Events", da: "Arrangementer" },
-  "eventsDesc": { en: "Successfully catered each year", da: "Succesfuldt cateret hvert år" },
+"eventsLabel": { 
+  en: "Perfect Texture 🤤", 
+  da: "Perfekt Tekstur 🤤" 
+},
+"eventsDesc": {
+  en: "48-hour raised dough for exceptional flavor", 
+  da: "48-timers hævet dej for enestående smag" 
+},
   "pizzaTypesLabel": { en: "Pizza Types", da: "Pizzatyper" },
   "pizzaTypesDesc": { en: "From classic to gourmet options", da: "Fra klassisk til gourmet muligheder" },
   "funLabel": { en: "Fun", da: "Sjov" },
@@ -82,11 +113,13 @@ const translations: Translations = {
   
   // Menu section
   "ourPizzaMenu": { en: "Our Pizza Menu", da: "Vores Pizzamenu" },
-  "menuSubtitle": { en: "Wood-fired, handcrafted pizzas made fresh at your event with premium ingredients", da: "Brændefyrede, håndlavede pizzaer lavet friske til dit arrangement med førsteklasses ingredienser" },
-  "classicPizzas": { en: "Classic Pizzas", da: "Klassiske Pizzaer" },
-  "classicPizzasDesc": { en: "Our classic pizzas are made with traditional tomato sauce and mozzarella cheese base.", da: "Vores klassiske pizzaer er lavet med traditionel tomatsauce og mozzarella som base." },
+ "menuSubtitle": { 
+  en: "Neapolitan-inspired, handcrafted pizzas made fresh at your event with premium ingredients", 
+  da: "Napolitansk-inspirerede, håndlavede pizzaer lavet friske til dit arrangement med førsteklasses ingredienser" 
+},"classicPizzas": { en: "Classic Pizzas", da: "Klassiske Pizzaer" },
+  "classicPizzasDesc": { en: "Our classic pizzas are made with traditional San Marzano tomato sauce and Fior de latte mozzarella base.", da: "Vores klassiske pizzaer er lavet med San Marzano tomatsauce og Fior de latte mozzarella som base." },
   "whitePizzas": { en: "White Pizzas", da: "Hvide Pizzaer" },
-  "whitePizzasDesc": { en: "Our white pizzas are made with a creamy garlic sauce base instead of tomato sauce.", da: "Vores hvide pizzaer er lavet med en cremet hvidløgssauce som base i stedet for tomatsauce." },
+  "whitePizzasDesc": { en: "Our white pizzas are made with a creamy Mascarpone sauce base.", da: "Vores hvide pizzaer er lavet med en cremet Mascarpone sauce som base." },
   "gourmetPizzas": { en: "Gourmet Pizzas", da: "Gourmet Pizzaer" },
   "gourmetPizzasDesc": { en: "Our signature gourmet pizzas feature premium ingredients and unique flavor combinations.", da: "Vores signatur gourmetpizzaer har førsteklasses ingredienser og unikke smagskombinationer." },
   "veg": { en: "Veg", da: "Veg" },
@@ -137,11 +170,13 @@ const translations: Translations = {
   "bookPizzaCrewNow": { en: "Book Pizza Crew Now", da: "Book Pizza Crew Nu" },
   "contactInfo": { en: "Contact Information", da: "Kontaktinformation" },
   "location": { en: "Location", da: "Lokation" },
-  "locationDesc": { en: "We're mobile! We serve events throughout the region.", da: "Vi er mobile! Vi serverer ved arrangementer i hele regionen." },
+"locationDesc": {
+  "en": "We're mobile! We serve events throughout Greater Copenhagen.",
+  "da": "Vi er mobile! Vi serverer ved arrangementer i hele Storkøbenhavn."
+},
+
   "email": { en: "Email", da: "E-mail" },
   "phone": { en: "Phone", da: "Telefon" },
-  "availability": { en: "Availability", da: "Tilgængelighed" },
-  "availabilityDesc": { en: "7 days a week, bookings required at least 7 days in advance", da: "7 dage om ugen, bookinger kræves mindst 7 dage i forvejen" },
   "ourServiceAreas": { en: "Our Service Areas", da: "Vores Serviceområder" },
   "serviceAreasDesc": { 
     en: "We primarily serve a 50-mile radius but can travel further for larger events. Contact us to check availability for your location!", 
@@ -160,9 +195,77 @@ const translations: Translations = {
   "privacyPolicy": { en: "Privacy Policy", da: "Privatlivspolitik" },
   "termsOfService": { en: "Terms of Service", da: "Servicevilkår" },
 
-  // Language toggle
-  "english": { en: "English", da: "Engelsk" },
-  "danish": { en: "Danish", da: "Dansk" }
+  "margherita": { en: "Margherita", da: "Margherita" },
+"margheritaIngredients": { 
+  en: "Fresh basil & olive oil", 
+  da: "Frisk basilikum & olivenolie" 
+},
+
+"pepperoni": { en: "Pepperoni", da: "Pepperoni" },
+"pepperoniIngredients": { 
+  en: "Classik", 
+  da: "Klassik" 
+},
+
+"hawaiian": { en: "Hawaiian", da: "Hawaii" },
+"hawaiianIngredients": { 
+  en: "Ham & fresh pineapple", 
+  da: "Skinke & frisk ananas" 
+},
+
+"meatLovers": { en: "Capricciosa", da: "Capricciosa" },
+"meatLoversIngredients": { 
+  en: "Ham & mushrooms", 
+  da: "Skinke & stegte blandet svampe" 
+},
+
+"diavola": { en: "Diavola", da: "Diavola" },
+"diavolaIngredients": { 
+  en: "Salame ventricina & chili", 
+  da: "Salame ventricina & chili" 
+},
+
+"fourCheese": { en: "4 formaggi ", da: "4 formaggi" },
+"fourCheeseIngredients": { 
+  en: "Fior di latte, mini mozzarella, gorgonzola, parmigiano reggiano", 
+  da: "Fior di latte, mini mozzarella, gorgonzola, parmigiano reggiano" 
+},
+
+"truffleMushroom": { en: "O sole mio", da: "O sole mio" },
+"truffleMushroomIngredients": { 
+  en: "Fior de latte, mix fungi, pine nuts, truffle, pesto, parmigiano reggiano ", 
+  da: "Fior de latte, mix fungi, pinjekerner, trøffel, pesto, parmigiano reggiano ",
+},
+
+"prosciuttoArugula": { en: "Prosciutto & Arugula", da: "Parmaskinke & Rucola" },
+"prosciuttoArugulaIngredients": { 
+  en: "San Marzano tomato sauce and Fior de latte mozzarella, prosciutto di Parma, arugula, cherry tomatoes, parmigiano reggiano, pesto", 
+  da: "San Marzano tomatsauce, Fior de latte mozzarella, parmaskinke, rucola, cherrytomater, parmigiano reggiano, pesto" 
+},
+
+"figGoatCheese": { en: "Sweet bresaola", da: "Sweet bresaola" },
+"figGoatCheeseIngredients": { 
+  en: "Mascarpone, bresaola, honey, parmigiano reggiano", 
+  da: "Mascarpone, bresaola, honning, parmigiano reggiano" 
+},
+// Pricing section
+"pricing": { en: "Our Pricing", da: "Vores Priser" },
+"hourlyRate": { en: "Hourly Rate", da: "Timepris" },
+"pizzaPrice": { en: "Pizza Price", da: "Pizzapris" },
+"perPizza": { en: "per pizza", da: "pr. pizza" },
+"pizzaCapacity": { en: "Capacity", da: "Kapacitet" },
+"maxPizzaPerHour": { en: "Maximum 80 pizzas per hour", da: "Maksimalt 80 pizzaer pr. time" },
+"minimumOrder": { en: "Minimum Order", da: "Minimum Bestilling" },
+"pizzas": { en: "pizzas", da: "pizzaer" },
+"setupTime": { en: "We arrive 45 minutes before to set up, warm up, and decorate - all free of charge", da: "Vi ankommer 45 minutter før for at gøre klar, varme op og pynte - helt gratis" },
+"pizzaSelectionTime": { en: "You can choose your pizzas later - booking at least 3 days before the event is most important", da: "I kan altid vælge pizzaerne senere - det vigtigste er at bestille minimum 3 dage før eventet" },
+
+// Questions section
+"questions": { en: "Have Questions?", da: "Har I Spørgsmål?" },
+"questionsDesc": { en: "If you have any questions about our services, pricing, or availability, feel free to reach out to us.", da: "Hvis I har spørgsmål om vores services, priser eller tilgængelighed, er I meget velkomne til at kontakte os." },
+"responseTimeNote": { en: "We'll get back to you as soon as possible to help make your event a success!", da: "Vi vender tilbage hurtigst muligt for at hjælpe med at gøre jeres arrangement til en succes!" },
+"bookingDeadline": { en: "Booking Deadline", da: "Bookingfrist" },
+"bookingDeadlineDesc": { en: "Please book at least 3 days before your event", da: "Venligst book mindst 3 dage før dit arrangement" },
 };
 
 // Create the context

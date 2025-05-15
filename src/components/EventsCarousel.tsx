@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import {
   PartyPopper,
   Users,
   Cake,
-  Calendar,
+  Gift,
   CalendarCheck,
   Utensils,
   ArrowLeft,
@@ -25,7 +24,7 @@ import { Button } from "@/components/ui/button";
 const EventsCarousel = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
-  const [api, setApi] = React.useState<any>(null);
+  const [api, setApi] = React.useState(null);
 
   const events = [
     {
@@ -39,7 +38,7 @@ const EventsCarousel = () => {
       id: 2,
       title: () => t('confirmations'),
       description: () => t('confirmationsDesc'),
-      icon: CalendarCheck,
+      icon: Gift,
       color: "bg-blue-500"
     },
     {
@@ -51,24 +50,31 @@ const EventsCarousel = () => {
     },
     {
       id: 4,
-      title: () => t('blueMonday'),
-      description: () => t('blueMondayDesc'),
-      icon: Calendar,
-      color: "bg-indigo-500"
-    },
-    {
-      id: 5,
       title: () => t('networkingEvents'),
       description: () => t('networkingEventsDesc'),
       icon: Users,
       color: "bg-orange-500"
     },
     {
-      id: 6,
+      id: 5,
       title: () => t('privateGatherings'),
       description: () => t('privateGatheringsDesc'),
       icon: Utensils,
       color: "bg-red-500"
+    },
+    {
+      id: 6,
+      title: () => t('corporateEvents'),
+      description: () => t('corporateEventsDesc'),
+      icon: CalendarCheck,
+      color: "bg-indigo-500"
+    },
+    {
+      id: 7,
+      title: () => t('allParties'),
+      description: () => t('allPartiesDesc'),
+      icon: PartyPopper,
+      color: "bg-purple-500"
     }
   ];
 

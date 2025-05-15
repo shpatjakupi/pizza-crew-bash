@@ -57,12 +57,8 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6">{t('contactUs')}</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <Phone className="text-pizza-orange mr-3 flex-shrink-0 mt-1" size={18} />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
-              </li>
-              <li className="flex items-start">
                 <Mail className="text-pizza-orange mr-3 flex-shrink-0 mt-1" size={18} />
-                <span className="text-gray-300">bookings@pizzacrew.com</span>
+                <span className="text-gray-300">booking@pizzacrew.dk</span>
               </li>
               <li className="flex items-start">
                 <MapPin className="text-pizza-orange mr-3 flex-shrink-0 mt-1" size={18} />

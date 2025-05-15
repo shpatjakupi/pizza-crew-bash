@@ -52,12 +52,13 @@ const Hero = () => {
           </div>
           
           <div className="lg:w-1/2 relative order-1 lg:order-2">
-            <div className="relative w-full h-[400px] overflow-hidden rounded-xl shadow-2xl float-animation">
-              <img 
-                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1000&auto=format&fit=crop"
-                alt="Delicious pizza made by Pizza Crew" 
-                className="w-full h-full object-cover"
-              />
+            <div className="relative w-full h-[620px] overflow-hidden rounded-xl shadow-2xl float-animation">
+              <img
+                  src="/images/pizzahjerte.jpeg"
+                  alt="Delicious pizza made by Pizza Crew"
+                  className="w-full h-full object-cover"
+                  loading="eager" // or "lazy" if not above the fold
+                />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
                 <span className="inline-block bg-yellow-300 text-yellow-800 font-bold px-4 py-1 rounded-full text-sm">
                   {t('freshHot')}

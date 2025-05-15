@@ -1,92 +1,78 @@
-
 import React from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface PizzaItem {
-  name: string;
-  ingredients: string;
-  price: string;
+  nameKey: string;
+  ingredientsKey: string;
   spicy?: boolean;
   vegetarian?: boolean;
 }
 
 interface PizzaCategory {
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   pizzas: PizzaItem[];
 }
 
 const MenuSection = () => {
+  const { t } = useLanguage();
+  
   const menuCategories: PizzaCategory[] = [
     {
-      title: "Classic Pizzas",
-      description: "Our classic pizzas are made with traditional tomato sauce and mozzarella cheese base.",
+      titleKey: 'classicPizzas',
+      descriptionKey: 'classicPizzasDesc',
       pizzas: [
         {
-          name: "Margherita",
-          ingredients: "San Marzano tomato sauce, fresh mozzarella, basil, olive oil",
-          price: "119 kr",
+          nameKey: 'margherita',
+          ingredientsKey: 'margheritaIngredients',
           vegetarian: true
         },
         {
-          name: "Pepperoni",
-          ingredients: "Pepperoni, mozzarella, tomato sauce",
-          price: "129 kr"
+          nameKey: 'pepperoni',
+          ingredientsKey: 'pepperoniIngredients'
         },
         {
-          name: "Hawaiian",
-          ingredients: "Ham, pineapple, mozzarella, tomato sauce",
-          price: "129 kr"
+          nameKey: 'hawaiian',
+          ingredientsKey: 'hawaiianIngredients'
         },
         {
-          name: "Meat Lover's",
-          ingredients: "Pepperoni, sausage, bacon, ham, mozzarella, tomato sauce",
-          price: "149 kr"
+          nameKey: 'meatLovers',
+          ingredientsKey: 'meatLoversIngredients'
         },
         {
-          name: "Diavola",
-          ingredients: "Spicy salami, chili flakes, bell peppers, mozzarella, tomato sauce",
-          price: "139 kr",
+          nameKey: 'diavola',
+          ingredientsKey: 'diavolaIngredients',
           spicy: true
         }
       ]
     },
     {
-      title: "White Pizzas",
-      description: "Our white pizzas are made with a creamy garlic sauce base instead of tomato sauce.",
+      titleKey: 'whitePizzas',
+      descriptionKey: 'whitePizzasDesc',
       pizzas: [
         {
-          name: "Four Cheese",
-          ingredients: "Mozzarella, gorgonzola, parmesan, ricotta, garlic cream base",
-          price: "139 kr",
+          nameKey: 'fourCheese',
+          ingredientsKey: 'fourCheeseIngredients',
           vegetarian: true
         },
         {
-          name: "Truffle Mushroom",
-          ingredients: "Wild mushrooms, truffle oil, mozzarella, parmesan, garlic cream base",
-          price: "149 kr",
+          nameKey: 'truffleMushroom',
+          ingredientsKey: 'truffleMushroomIngredients',
           vegetarian: true
         }
       ]
     },
     {
-      title: "Gourmet Pizzas",
-      description: "Our signature gourmet pizzas feature premium ingredients and unique flavor combinations.",
+      titleKey: 'gourmetPizzas',
+      descriptionKey: 'gourmetPizzasDesc',
       pizzas: [
         {
-          name: "Prosciutto & Arugula",
-          ingredients: "Prosciutto di Parma, arugula, cherry tomatoes, parmesan, balsamic glaze, tomato base",
-          price: "159 kr"
+          nameKey: 'prosciuttoArugula',
+          ingredientsKey: 'prosciuttoArugulaIngredients'
         },
         {
-          name: "Fig & Goat Cheese",
-          ingredients: "Fresh figs, goat cheese, honey, walnuts, arugula, balsamic glaze, olive oil base",
-          price: "159 kr",
-          vegetarian: true
-        },
-        {
-          name: "Seafood Deluxe",
-          ingredients: "Shrimp, calamari, mussels, garlic, parsley, lemon zest, mozzarella, olive oil base",
-          price: "169 kr"
+          nameKey: 'figGoatCheese',
+          ingredientsKey: 'figGoatCheeseIngredients'
         }
       ]
     }
@@ -97,42 +83,40 @@ const MenuSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="logo-text text-3xl md:text-4xl text-pizza-orange mb-4">
-            Our Pizza Menu
+            {t('ourPizzaMenu')}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Wood-fired, handcrafted pizzas made fresh at your event with premium ingredients
+            {t('menuSubtitle')}
           </p>
         </div>
-
         <div className="space-y-16">
           {menuCategories.map((category, idx) => (
             <div key={idx} className="bg-white p-6 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-pizza-orange mb-2">{category.title}</h3>
-              <p className="text-gray-600 mb-6">{category.description}</p>
-              
+              <h3 className="text-2xl font-bold text-pizza-orange mb-2">{t(category.titleKey)}</h3>
+              <p className="text-gray-600 mb-6">{t(category.descriptionKey)}</p>
+             
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {category.pizzas.map((pizza, pizzaIdx) => (
-                  <div 
-                    key={pizzaIdx} 
+                  <div
+                    key={pizzaIdx}
                     className="border border-gray-100 rounded-lg p-4 hover:shadow-lg transition-all event-card"
                   >
                     <div className="flex justify-between items-start">
                       <h4 className="text-xl font-semibold flex items-center gap-2">
-                        {pizza.name}
+                        {t(pizza.nameKey)}
                         {pizza.vegetarian && (
                           <span className="text-green-600 text-xs font-normal bg-green-100 px-2 py-1 rounded-full">
-                            Veg
+                            {t('veg')}
                           </span>
                         )}
                         {pizza.spicy && (
                           <span className="text-red-600 text-xs font-normal bg-red-100 px-2 py-1 rounded-full">
-                            Spicy
+                            {t('spicy')}
                           </span>
                         )}
                       </h4>
-                      <span className="text-lg font-bold text-pizza-orange">{pizza.price}</span>
                     </div>
-                    <p className="text-gray-600 mt-2">{pizza.ingredients}</p>
+                    <p className="text-gray-600 mt-2">{t(pizza.ingredientsKey)}</p>
                   </div>
                 ))}
               </div>

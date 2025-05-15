@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Calendar, MapPin, Mail, Phone } from "lucide-react";
+import { Calendar, MapPin, Mail, Phone, Clock, CreditCard, Check } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -16,8 +15,6 @@ const ContactForm = () => {
     email: '',
     phone: '',
     eventDate: '',
-    eventType: '',
-    guestCount: '',
     message: ''
   });
 
@@ -25,53 +22,52 @@ const ContactForm = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-// In the handleSubmit function
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  
-  try {
-    const response = await fetch('/api/email/send', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
     
-    const data = await response.json();
-    
-    if (data.success) {
-      toast({
-        title: "Booking request sent!",
-        description: "We'll contact you soon to confirm your event details.",
-        variant: "default",
+    try {
+      const response = await fetch('/api/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
       
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        eventDate: '',
-        eventType: '',
-        guestCount: '',
-        message: ''
+      const data = await response.json();
+      
+      if (data.success) {
+        toast({
+          title: "Booking request sent!",
+          description: "We'll contact you soon to confirm your event details.",
+          variant: "default",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          eventDate: '',
+          message: ''
+        });
+      } else {
+        throw new Error(data.message || 'Failed to send email');
+      }
+    } catch (error) {
+      toast({
+        title: "Error sending request",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
       });
-    } else {
-      throw new Error(data.message || 'Failed to send email');
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    toast({
-      title: "Error sending request",
-      description: "Please try again or contact us directly.",
-      variant: "destructive",
-    });
-    console.error(error);
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
+
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -86,6 +82,39 @@ const handleSubmit = async (e: React.FormEvent) => {
         
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-1/2">
+            <div className="bg-orange-50 rounded-xl p-6 mb-8">
+              <h3 className="text-xl font-bold mb-4 flex items-center">
+                <CreditCard className="text-pizza-orange mr-2" />
+                {t('pricing')}
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <Check className="text-pizza-orange mr-2 mt-1 flex-shrink-0" />
+                  <span><strong>{t('hourlyRate')}:</strong> 600 kr</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-pizza-orange mr-2 mt-1 flex-shrink-0" />
+                  <span><strong>{t('pizzaPrice')}:</strong> 90 kr {t('perPizza')}</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-pizza-orange mr-2 mt-1 flex-shrink-0" />
+                  <span><strong>{t('pizzaCapacity')}:</strong> {t('maxPizzaPerHour')}</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-pizza-orange mr-2 mt-1 flex-shrink-0" />
+                  <span><strong>{t('minimumOrder')}:</strong> 20 {t('pizzas')}</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-pizza-orange mr-2 mt-1 flex-shrink-0" />
+                  <span>{t('setupTime')}</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-pizza-orange mr-2 mt-1 flex-shrink-0" />
+                  <span>{t('pizzaSelectionTime')}</span>
+                </li>
+              </ul>
+            </div>
+            
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -129,7 +158,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     name="phone" 
                     value={formData.phone} 
                     onChange={handleChange} 
-                    placeholder="+1 (555) 123-4567" 
+                    placeholder="+45 12345678" 
                     required 
                     className="w-full"
                   />
@@ -150,46 +179,6 @@ const handleSubmit = async (e: React.FormEvent) => {
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="eventType" className="block text-sm font-medium text-gray-700 mb-1">
-                    {t('eventType')}
-                  </label>
-                  <select
-                    id="eventType"
-                    name="eventType"
-                    value={formData.eventType}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
-                  >
-                    <option value="" disabled>{t('selectEventType')}</option>
-                    <option value="birthday">{t('birthday')}</option>
-                    <option value="confirmation">{t('confirmation')}</option>
-                    <option value="student">{t('student')}</option>
-                    <option value="corporate">{t('corporate')}</option>
-                    <option value="privateParty">{t('privateParty')}</option>
-                    <option value="other">{t('other')}</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="guestCount" className="block text-sm font-medium text-gray-700 mb-1">
-                    {t('numberOfGuests')}
-                  </label>
-                  <Input 
-                    id="guestCount" 
-                    name="guestCount" 
-                    type="number" 
-                    value={formData.guestCount} 
-                    onChange={handleChange} 
-                    placeholder="50" 
-                    required 
-                    className="w-full"
-                    min="10"
-                  />
-                </div>
-              </div>
-              
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                   {t('additionalDetails')}
@@ -204,13 +193,13 @@ const handleSubmit = async (e: React.FormEvent) => {
                 />
               </div>
               
-            <Button
-              type="submit"
-              className="w-full gradient-orange text-white font-semibold py-6"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? (t('sending') || 'Sending...') : t('bookPizzaCrewNow')}
-            </Button>
+              <Button
+                type="submit"
+                className="w-full gradient-orange text-white font-semibold py-6"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (t('sending') || 'Sending...') : t('bookPizzaCrewNow')}
+              </Button>
             </form>
           </div>
           
@@ -230,41 +219,30 @@ const handleSubmit = async (e: React.FormEvent) => {
                   <Mail className="text-pizza-orange mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-medium">{t('email')}</h4>
-                    <p className="text-gray-600">bookings@pizzacrew.com</p>
+                    <p className="text-gray-600">booking@pizzacrew.com</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <Phone className="text-pizza-orange mr-4 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-medium">{t('phone')}</h4>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                  </div>
-                </div>
                 
                 <div className="flex items-start">
-                  <Calendar className="text-pizza-orange mr-4 mt-1 flex-shrink-0" />
+                  <Clock className="text-pizza-orange mr-4 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-medium">{t('availability')}</h4>
-                    <p className="text-gray-600">{t('availabilityDesc')}</p>
+                    <h4 className="font-medium">{t('bookingDeadline')}</h4>
+                    <p className="text-gray-600">{t('bookingDeadlineDesc')}</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="mt-8">
-              <h3 className="text-2xl font-bold mb-4">{t('ourServiceAreas')}</h3>
-              <div className="bg-white p-4 rounded-lg">
-                <img 
-                  src="https://placehold.co/600x400/orange/white?text=Service+Area+Map"
-                  alt="Map of our service areas" 
-                  className="rounded-lg w-full h-auto mb-4"
-                />
-                <p className="text-gray-600">
-                  {t('serviceAreasDesc')}
-                </p>
+            <div className="p-6 bg-white rounded-lg border border-orange-100">
+              <h3 className="text-xl font-bold mb-3 text-pizza-orange">{t('questions')}</h3>
+              <p className="text-gray-700 mb-4">{t('questionsDesc')}</p>
+              <div className="bg-orange-50 p-4 rounded-lg">
+                <p className="text-sm italic text-gray-700">{t('responseTimeNote')}</p>
               </div>
             </div>
+            
+
           </div>
         </div>
       </div>
