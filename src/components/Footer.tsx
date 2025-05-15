@@ -21,13 +21,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="bg-gray-700 hover:bg-pizza-orange transition-colors p-2 rounded-full">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="bg-gray-700 hover:bg-pizza-orange transition-colors p-2 rounded-full">
                 <Instagram size={20} />
-              </a>
-              <a href="#" className="bg-gray-700 hover:bg-pizza-orange transition-colors p-2 rounded-full">
-                <Twitter size={20} />
               </a>
             </div>
           </div>
@@ -72,10 +66,6 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 mt-10 pt-8 text-center text-gray-400 text-sm">
           <p>© {new Date().getFullYear()} Pizza Crew. {t('allRightsReserved')}</p>
-          <div className="mt-2 flex justify-center space-x-6">
-            <a href="#" className="hover:text-pizza-orange">{t('privacyPolicy')}</a>
-            <a href="#" className="hover:text-pizza-orange">{t('termsOfService')}</a>
-          </div>
         </div>
       </div>
     </footer>
