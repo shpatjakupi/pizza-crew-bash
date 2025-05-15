@@ -277,7 +277,7 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('da');
 
   // Translation function
   const t = (key: string): string => {
