@@ -156,7 +156,7 @@ const AboutSection = () => {
               </div>
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <h3 className="font-bold text-xl mb-2">
-                  <span className="text-pizza-orange">15+</span> {t('pizzaTypesLabel')}
+                  <span className="text-pizza-orange">10+</span> {t('pizzaTypesLabel')}
                 </h3>
                 <p className="text-gray-600">{t('pizzaTypesDesc')}</p>
               </div>
