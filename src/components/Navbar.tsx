@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import LanguageToggle from './LanguageToggle';
 import { useLanguage } from '@/context/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,6 +65,13 @@ const Navbar = () => {
           >
             {t('contact')}
           </a>
+          {/* New Logo page link */}
+          <Link 
+            to="/logo" 
+            className="text-foreground hover:text-pizza-orange font-medium transition-colors cursor-pointer whitespace-nowrap"
+          >
+            Logo
+          </Link>
           <div className="flex items-center gap-3">
             <LanguageToggle />
             <Button 
@@ -105,6 +112,13 @@ const Navbar = () => {
             >
               {t('contact')}
             </a>
+            {/* New Logo page link in mobile menu */}
+            <Link 
+              to="/logo"
+              className="text-foreground hover:text-pizza-orange py-2 px-4 font-medium cursor-pointer"
+            >
+              Logo
+            </Link>
             <Button 
               className="gradient-orange text-white font-semibold w-full"
               onClick={() => scrollToSection('contact')}

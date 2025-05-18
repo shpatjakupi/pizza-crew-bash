@@ -19,12 +19,8 @@
       "dest": "server.js"
     },
     {
-      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|svg|webp|json))",
-      "dest": "dist/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "dist/index.html"
+      "dest": "dist/$1"
     }
   ]
 }
