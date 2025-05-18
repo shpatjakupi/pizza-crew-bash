@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Pizza, Mail, Phone, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
 import { useLanguage } from '@/context/LanguageContext';
 
 const Footer = () => {
   const { t } = useLanguage();
-  
+ 
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -20,12 +19,15 @@ const Footer = () => {
               {t('footerDesc')}
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="bg-gray-700 hover:bg-pizza-orange transition-colors p-2 rounded-full">
+              <a href="https://www.instagram.com/pizzacrewcph" className="bg-gray-700 hover:bg-pizza-orange transition-colors p-2 rounded-full">
                 <Instagram size={20} />
+              </a>
+              <a href="https://www.facebook.com/share/1AXNTeFFYy/?mibextid=wwXIfr" className="bg-gray-700 hover:bg-pizza-orange transition-colors p-2 rounded-full">
+                <Facebook size={20} />
               </a>
             </div>
           </div>
-          
+         
           <div className="w-full md:w-1/4 mb-10">
             <h3 className="text-xl font-bold mb-6">{t('quickLinks')}</h3>
             <ul className="space-y-3">
@@ -46,7 +48,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+         
           <div className="w-full md:w-1/3 mb-10">
             <h3 className="text-xl font-bold mb-6">{t('contactUs')}</h3>
             <ul className="space-y-4">
@@ -63,7 +65,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+       
         <div className="border-t border-gray-800 mt-10 pt-8 text-center text-gray-400 text-sm">
           <p>© {new Date().getFullYear()} Pizza Crew. {t('allRightsReserved')}</p>
         </div>
