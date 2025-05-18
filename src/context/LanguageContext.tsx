@@ -171,8 +171,8 @@ const translations: Translations = {
   "contactInfo": { en: "Contact Information", da: "Kontaktinformation" },
   "location": { en: "Location", da: "Lokation" },
 "locationDesc": {
-  "en": "We're mobile! We serve events throughout Greater Copenhagen.",
-  "da": "Vi er mobile! Vi serverer ved arrangementer i hele Storkøbenhavn."
+  "en": "We're mobile! We serve events throughout Zealand.",
+  "da": "Vi er mobile! Vi serverer ved arrangementer i hele Sjælland."
 },
 
   "email": { en: "Email", da: "E-mail" },
