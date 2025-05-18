@@ -90,11 +90,7 @@ const ContactForm = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <Check className="text-pizza-orange mr-2 mt-1 flex-shrink-0" />
-                  <span><strong>{t('hourlyRate')}:</strong> 600 kr</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-pizza-orange mr-2 mt-1 flex-shrink-0" />
-                  <span><strong>{t('pizzaPrice')}:</strong> 90 kr {t('perPizza')}</span>
+                  <span><strong>{t('hourlyRate')}:</strong> {t('priceByAgreement')}</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="text-pizza-orange mr-2 mt-1 flex-shrink-0" />

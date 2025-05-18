@@ -6,26 +6,29 @@ interface PizzaItem {
   ingredientsKey: string;
   spicy?: boolean;
   vegetarian?: boolean;
+  price?: number;
 }
 
 interface PizzaCategory {
   titleKey: string;
   descriptionKey: string;
   pizzas: PizzaItem[];
+  basePrice: number;
 }
 
 const MenuSection = () => {
   const { t } = useLanguage();
-  
+ 
   const menuCategories: PizzaCategory[] = [
     {
       titleKey: 'classicPizzas',
       descriptionKey: 'classicPizzasDesc',
+      basePrice: 100,
       pizzas: [
         {
           nameKey: 'margherita',
           ingredientsKey: 'margheritaIngredients',
-          vegetarian: true
+          vegetarian: true,
         },
         {
           nameKey: 'pepperoni',
@@ -47,9 +50,18 @@ const MenuSection = () => {
       ]
     },
     {
-      titleKey: 'whitePizzas',
-      descriptionKey: 'whitePizzasDesc',
+      titleKey: 'gourmetPizzas',
+      descriptionKey: 'gourmetPizzasDesc',
+      basePrice: 125,
       pizzas: [
+        {
+          nameKey: 'prosciuttoArugula',
+          ingredientsKey: 'prosciuttoArugulaIngredients'
+        },
+        {
+          nameKey: 'figGoatCheese',
+          ingredientsKey: 'figGoatCheeseIngredients'
+        },
         {
           nameKey: 'fourCheese',
           ingredientsKey: 'fourCheeseIngredients',
@@ -59,20 +71,6 @@ const MenuSection = () => {
           nameKey: 'truffleMushroom',
           ingredientsKey: 'truffleMushroomIngredients',
           vegetarian: true
-        }
-      ]
-    },
-    {
-      titleKey: 'gourmetPizzas',
-      descriptionKey: 'gourmetPizzasDesc',
-      pizzas: [
-        {
-          nameKey: 'prosciuttoArugula',
-          ingredientsKey: 'prosciuttoArugulaIngredients'
-        },
-        {
-          nameKey: 'figGoatCheese',
-          ingredientsKey: 'figGoatCheeseIngredients'
         }
       ]
     }
@@ -115,6 +113,9 @@ const MenuSection = () => {
                           </span>
                         )}
                       </h4>
+                      <span className="font-medium text-pizza-orange">
+                        {category.basePrice} kr
+                      </span>
                     </div>
                     <p className="text-gray-600 mt-2">{t(pizza.ingredientsKey)}</p>
                   </div>

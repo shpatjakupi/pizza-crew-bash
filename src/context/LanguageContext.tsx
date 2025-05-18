@@ -227,14 +227,14 @@ const translations: Translations = {
 
 "fourCheese": { en: "4 formaggi ", da: "4 formaggi" },
 "fourCheeseIngredients": { 
-  en: "Fior di latte, mini mozzarella, gorgonzola, parmigiano reggiano", 
-  da: "Fior di latte, mini mozzarella, gorgonzola, parmigiano reggiano" 
+  en: "Mascarpone, Fior di latte, mini mozzarella, gorgonzola, parmigiano reggiano", 
+  da: "Mascarpone, Fior di latte, mini mozzarella, gorgonzola, parmigiano reggiano" 
 },
 
 "truffleMushroom": { en: "O sole mio", da: "O sole mio" },
 "truffleMushroomIngredients": { 
-  en: "Fior de latte, mix fungi, pine nuts, truffle, pesto, parmigiano reggiano ", 
-  da: "Fior de latte, mix fungi, pinjekerner, trøffel, pesto, parmigiano reggiano ",
+  en: "Mascarpone, Fior de latte, mix fungi, pine nuts, truffle, pesto, parmigiano reggiano ", 
+  da: "Mascarpone, Fior de latte, mix fungi, pinjekerner, trøffel, pesto, parmigiano reggiano ",
 },
 
 "prosciuttoArugula": { en: "Prosciutto & Arugula", da: "Parmaskinke & Rucola" },
@@ -250,8 +250,11 @@ const translations: Translations = {
 },
 // Pricing section
 "pricing": { en: "Our Pricing", da: "Vores Priser" },
+"priceByAgreement": { 
+  en: "Price by agreement. Contact us for a customized quote.", 
+  da: "Pris efter aftale. Kontakt os for et tilpasset tilbud." 
+},
 "hourlyRate": { en: "Hourly Rate", da: "Timepris" },
-"pizzaPrice": { en: "Pizza Price", da: "Pizzapris" },
 "perPizza": { en: "per pizza", da: "pr. pizza" },
 "pizzaCapacity": { en: "Capacity", da: "Kapacitet" },
 "maxPizzaPerHour": { en: "Maximum 80 pizzas per hour", da: "Maksimalt 80 pizzaer pr. time" },
