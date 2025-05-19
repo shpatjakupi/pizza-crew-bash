@@ -219,6 +219,13 @@ const ContactForm = () => {
                   </div>
                 </div>
                 
+                <div className="flex items-start">
+                  <Phone className="text-pizza-orange mr-4 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium">{t('phone')}</h4>
+                    <p className="text-gray-600">+45 53630347</p>
+                  </div>
+                </div>
                 
                 <div className="flex items-start">
                   <Clock className="text-pizza-orange mr-4 mt-1 flex-shrink-0" />
@@ -237,8 +244,6 @@ const ContactForm = () => {
                 <p className="text-sm italic text-gray-700">{t('responseTimeNote')}</p>
               </div>
             </div>
-            
-
           </div>
         </div>
       </div>
