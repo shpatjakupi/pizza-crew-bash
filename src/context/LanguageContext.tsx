@@ -117,7 +117,7 @@ const translations: Translations = {
   en: "Neapolitan-inspired, handcrafted pizzas made fresh at your event with premium ingredients", 
   da: "Napolitansk-inspirerede, håndlavede pizzaer lavet friske til dit arrangement med førsteklasses ingredienser" 
 },"classicPizzas": { en: "Classic Pizzas", da: "Klassiske Pizzaer" },
-  "classicPizzasDesc": { en: "Our classic pizzas are made with traditional San Marzano tomato sauce and Fior de latte mozzarella base.", da: "Vores klassiske pizzaer er lavet med San Marzano tomatsauce og Fior de latte mozzarella som base." },
+  "classicPizzasDesc": { en: "Our classic pizzas are made with traditional tomato sauce and mozzarella base.", da: "Vores klassiske pizzaer er lavet med klassisk tomatsauce og mozzarella som base." },
   "whitePizzas": { en: "White Pizzas", da: "Hvide Pizzaer" },
   "whitePizzasDesc": { en: "Our white pizzas are made with a creamy Mascarpone sauce base.", da: "Vores hvide pizzaer er lavet med en cremet Mascarpone sauce som base." },
   "gourmetPizzas": { en: "Gourmet Pizzas", da: "Gourmet Pizzaer" },
@@ -227,26 +227,26 @@ const translations: Translations = {
 
 "fourCheese": { en: "4 formaggi ", da: "4 formaggi" },
 "fourCheeseIngredients": { 
-  en: "Mascarpone, Fior di latte, mini mozzarella, gorgonzola, parmigiano reggiano", 
-  da: "Mascarpone, Fior di latte, mini mozzarella, gorgonzola, parmigiano reggiano" 
+  en: "Mascarpone, mozzarella, gorgonzola, parmigiano reggiano", 
+  da: "Mascarpone, mozzarella, gorgonzola, parmigiano reggiano" 
 },
 
 "truffleMushroom": { en: "O sole mio", da: "O sole mio" },
 "truffleMushroomIngredients": { 
-  en: "Mascarpone, Fior de latte, mix fungi, pine nuts, truffle, pesto, parmigiano reggiano ", 
-  da: "Mascarpone, Fior de latte, mix fungi, pinjekerner, trøffel, pesto, parmigiano reggiano ",
+  en: "Mascarpone, mozzarella, mix fungi, pine nuts, truffle, pesto, parmigiano reggiano ", 
+  da: "Mascarpone, mozzarella, mix fungi, pinjekerner, trøffel, pesto, parmigiano reggiano ",
 },
 
 "prosciuttoArugula": { en: "Prosciutto & Arugula", da: "Parmaskinke & Rucola" },
 "prosciuttoArugulaIngredients": { 
-  en: "San Marzano tomato sauce and Fior de latte mozzarella, prosciutto di Parma, arugula, cherry tomatoes, parmigiano reggiano, pesto", 
-  da: "San Marzano tomatsauce, Fior de latte mozzarella, parmaskinke, rucola, cherrytomater, parmigiano reggiano, pesto" 
+  en: "Classic tomato sauce and mozzarella, prosciutto di Parma, arugula, cherry tomatoes, parmigiano reggiano, pesto", 
+  da: "Klassik tomatsauce, mozzarella, parmaskinke, rucola, cherrytomater, parmigiano reggiano, pesto" 
 },
 
 "figGoatCheese": { en: "Sweet bresaola", da: "Sweet bresaola" },
 "figGoatCheeseIngredients": { 
-  en: "Mascarpone, bresaola, honey, parmigiano reggiano", 
-  da: "Mascarpone, bresaola, honning, parmigiano reggiano" 
+  en: "Mascarpone, mozzarella, bresaola, honey, parmigiano reggiano", 
+  da: "Mascarpone, mozzarella, bresaola, honning, parmigiano reggiano" 
 },
 // Pricing section
 "pricing": { en: "Our Pricing", da: "Vores Priser" },

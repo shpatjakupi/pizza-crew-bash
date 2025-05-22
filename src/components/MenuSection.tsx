@@ -23,7 +23,7 @@ const MenuSection = () => {
     {
       titleKey: 'classicPizzas',
       descriptionKey: 'classicPizzasDesc',
-      basePrice: 100,
+      basePrice: 80,
       pizzas: [
         {
           nameKey: 'margherita',
@@ -52,7 +52,7 @@ const MenuSection = () => {
     {
       titleKey: 'gourmetPizzas',
       descriptionKey: 'gourmetPizzasDesc',
-      basePrice: 125,
+      basePrice: 100,
       pizzas: [
         {
           nameKey: 'prosciuttoArugula',
