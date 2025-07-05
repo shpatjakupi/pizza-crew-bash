@@ -98,7 +98,7 @@ const ContactForm = () => {
                 </li>
                 <li className="flex items-start">
                   <Check className="text-pizza-orange mr-2 mt-1 flex-shrink-0" />
-                  <span><strong>{t('minimumOrder')}:</strong> 20 {t('pizzas')}</span>
+                  <span><strong>{t('minimumOrder')}:</strong> 30 {t('pizzas')}</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="text-pizza-orange mr-2 mt-1 flex-shrink-0" />
